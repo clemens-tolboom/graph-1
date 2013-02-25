@@ -264,6 +264,16 @@ class Graph extends Set
     }
 
     /**
+     * checks whether vertex is added to graph
+     *
+     * @param int|string $id identifier of Vertex
+     * @return TRUE|FALSE
+     */
+    public function hasVertex($id){
+      return isset($this->vertices[$id]);
+    }
+
+    /**
      * return first vertex found
      *
      * some algorithms do not need a particular vertex, but merely a (random)
