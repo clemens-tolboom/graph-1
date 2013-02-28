@@ -256,21 +256,22 @@ class Graph extends Set
      */
     public function getVertex($id)
     {
-        if( ! $this->hasVertex($id)){
-            throw new OutOfBoundsException('Vertex '.$id.' does not exist');
+        if (!$this->hasVertex($id)) {
+            throw new OutOfBoundsException('Vertex ' . $id . ' does not exist');
         }
 
         return $this->vertices[$id];
     }
 
     /**
-     * checks whether vertex is added to graph
+     * checks whether given vertex ID exists in this graph
      *
      * @param int|string $id identifier of Vertex
-     * @return TRUE|FALSE
+     * @return boolean
      */
-    public function hasVertex($id){
-      return isset($this->vertices[$id]);
+    public function hasVertex($id)
+    {
+        return isset($this->vertices[$id]);
     }
 
     /**
