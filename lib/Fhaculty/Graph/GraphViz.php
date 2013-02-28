@@ -419,7 +419,7 @@ class GraphViz
      * @return StdClass
      * @see GraphViz::escape()
      */
-    static function raw($string)
+    public static function raw($string)
     {
         return (object) array('string' => $string);
     }
