@@ -34,7 +34,7 @@ class GraphViz implements LayoutableInterface
      * @var string
      * @see GraphViz::setExecutable()
      */
-    private $executable = 'dot';
+    private $executable = '';
 
     const DELAY_OPEN = 2.0;
 
@@ -43,10 +43,11 @@ class GraphViz implements LayoutableInterface
     public function __construct(Graph $graphToPlot)
     {
         $this->graph = $graphToPlot;
-
+        $executable= 'dot';
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            $this->executable = 'dot.exe';
+            $executable='dot.exe';
         }
+        $this->setExecutable($executable);
     }
 
     /**
